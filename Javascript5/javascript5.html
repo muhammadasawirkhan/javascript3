@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+	.container{
+		width: 100vw;
+		height: 100vh;
+		border: 0px solid black;
+	}
+	.row1{
+		width: 30%;
+		height:60vh;
+		background-color: cyan;
+		margin-left: 35vw;
+		margin-top: 4vh;
+	}
+	.row1 input{
+		margin-top: 2vh;
+		margin-left: 4vh;
+		color: white;
+		background: black;
+	}
+	.container h1{
+		margin-top: 6vh;
+		margin-left: 45vw;
+	}
+
+</style>
+</head>
+<body id="bdy">
+	<div class="container">
+		<h1>FORM</h1>
+		<div class="row1">
+
+			<p>NAME:</p>
+			<input type="text" id="name"/>
+			<br/>
+
+			<p>PHONE:</p>
+			<input type="text" id="phone"/>
+			<div class="text">The number should be less than 11</div>
+			<br/>
+
+			<p>PASSWORD:</p>
+			<input type="password" id="password"/>
+			<div class="pas">Password length cannot be greater than 4</div>
+			<br/>
+
+			<button id="btn" onclick="save()">SAVE</button>
+			<div id="display1">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var phone=document.querySelector("#phone");
+		var FirstName=document.querySelector("#name");
+		var password=document.querySelector("#password");
+		var btn=document.querySelector("#btn");
+
+
+
+
+
+
+
+		document.querySelector(".text").style.display='none';
+		phone.addEventListener('keyup',()=>{
+
+			var text=phone.value;
+			if (text.length>11)
+			{
+				document.querySelector(".text"),style.display='block';
+			}
+		});
+
+		document.querySelector(".pas").style.display='none';
+
+		password.addEventListener('keyup',()=>{
+			var pas=password.value;
+			if (pas.length>4)
+			{
+				document.querySelector(".pas").style.display='block';
+			}
+		});
+
+		function save(){
+			var div=document.createElement("div");
+			div.setAttribute("id",'display');
+			var p=document.createElement("p");
+			//var FirstName1=FirstName.value;
+
+			var str;//=FirstName1;
+			//str=str+
+
+			p.innerHTML="FirstName:"+FirstName.value+"<br/>"+"Phone:"+phone.value+"<br/>Password:"+password.value;
+
+			div.appendChild(p);
+			alert(div.innerHTML);
+			//document.querySelector("#display").innerHTML=div;
+			var display1=document.querySelector("#display1");
+			display1.innerHTML=div.innerHTML;//innerHTML=div.innerHTML;
+			//var phone=document.querySelector()
+		}
+
+
+	</script>
+</body>
+</html>
